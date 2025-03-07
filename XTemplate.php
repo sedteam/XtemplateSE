@@ -20,7 +20,7 @@
  * file in the root of this project for details.
  *
  * @package API - XTemplate SE
- * @version 3.0.0
+ * @version 1.1.0
  * @license BSD 3-Clause License
  */
 class XTemplate
