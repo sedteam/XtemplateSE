@@ -1,5 +1,5 @@
 <?php
-require_once 'Xtemplate.php';
+require_once '../Xtemplate.php';
 
 $xtpl = new XTemplate('ex2.tpl');
 
