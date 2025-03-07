@@ -12,12 +12,17 @@
  * for broader use cases while preserving the lightweight and efficient 
  * design philosophy of CoTemplate.
  *
+ * Copyright (c) 2024-2025, Seditio Team
+ * Copyright (c) 2008-2025, Cotonti Team
+ * Copyright (c) 2001-2008, Neocrome
+ *
+ * This software is licensed under the BSD 3-Clause License. See the LICENSE
+ * file in the root of this project for details.
+ *
  * @package API - XTemplate SE
  * @version 3.0.0
- * @copyright (c) Seditio Team
  * @license BSD 3-Clause License
  */
-
 class XTemplate
 {
     public $filename = '';
