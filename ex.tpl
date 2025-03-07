@@ -108,7 +108,7 @@
         <p>Total Items: {STATS.total_items}</p>
         <p>Total Categories: {STATS.total_categories}</p>
         <p>Average Price: ${STATS.average_price|round($this, 2)}</p>
-        <p>Last Updated: {STATS.last_updated|strtotime}</p>
+        <p>Last Updated: {STATS.last_updated|strtotime|date('Y-m-d', $this)}</p>
         <!-- IF {STATS.total_items} > 3 -->
         <p class="note">Large inventory detected!</p>
         <!-- ENDIF -->

@@ -923,6 +923,8 @@ class XtplData
                 $tmp = $chunk->evaluate($tpl);
                 if (is_array($tmp) || is_object($tmp)) {
                     $tmp = var_export($tmp, true);
+                } elseif (is_bool($tmp)) {
+                    $tmp = $tmp ? 'true' : 'false';
                 }
                 $data .= $tmp;
             } else {
@@ -1065,16 +1067,20 @@ class XtplExpr
     {
         switch ($op) {
             case '+':
+                if (is_string($a) && is_string($b)) {
+                    return $a . $b;
+                }
                 return $a + $b;
             case '-':
                 return $a - $b;
             case '*':
                 return $a * $b;
             case '/':
-                if ($b == 0) throw new Exception("Division by zero");
+                if ($b == 0) return 'Division by zero';
                 return $a / $b;
             case '%':
-                if ($b == 0) throw new Exception("Modulo by zero");
+                if ($b == 0) return 'Modulo by zero';
+                if (!is_int($a) || !is_int($b)) return (int)$a % (int)$b;
                 return $a % $b;
             case '==':
                 return $a == $b;
@@ -1108,7 +1114,6 @@ class XtplExpr
                 throw new Exception("Unknown operator: $op");
         }
     }
-
     /**
      * Evaluates the expression using the provided template for variable resolution.
      *
