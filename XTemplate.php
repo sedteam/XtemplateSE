@@ -1392,7 +1392,7 @@ class XtplVar
      */
     public function __construct($text)
     {
-        if (preg_match('#^([\w\.]+)\s*([-+*/])\s*([\w\.]+)$#', $text, $matches)) {
+        if (preg_match('#^([\w\.]+)\s*([-+*/%])\s*([\w\.]+)$#', $text, $matches)) {
             $this->name = 'expr';
             $this->expression = new XtplExpr($text);
         } else {
