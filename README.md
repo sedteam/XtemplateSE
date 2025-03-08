@@ -50,12 +50,21 @@ Installation
 1.  Download the `XTemplate.php` file from the repository.
 2.  Include it in your project:
 ```    
-        <?php
-        require_once 'XTemplate.php';
+   <?php
+   require_once 'XTemplate.php';
  ```                   
     
 
 No additional dependencies are required.
+
+### Requirements
+
+```
+   PHP 5.4.0 or higher
+   Mbstring
+   PCRE
+   Hash
+```
 
 Basic Usage
 -----------
@@ -303,8 +312,10 @@ Performance Optimization
 History
 -------
 
-*   **v1.0 (2025-03-07)**: Initial release with support for blocks, variables, arithmetic, conditions, and loops.
-*   **v1.1**: Fixed `%` operator support and improved error handling.
+*   **v1.2.0**: Add callback function filtering to XTemplate. Add XTemplate::configure() for global settings initialization
+*   **v1.1.0**: Fixed `%` operator support and improved error handling.
+*   **v1.0.0 (2025-03-07)**: Initial release with support for blocks, variables, arithmetic, conditions, and loops.
+
 
 License
 -------
