@@ -42,7 +42,7 @@ How It Works
     *   **Reliability**: Built-in error handling (e.g., division by zero).
     *   **Performance**: Lazy evaluation of expressions and template structure caching.
 
-Example: `{NUM1 + NUM2 * NUM3}` is converted to RPN (`NUM1 NUM2 NUM3 * +`), evaluated with precedence, and returns the correct result.
+Example: `{NUM1 + NUM2}` is converted to RPN (`NUM1 NUM2 +`), evaluated with precedence, and returns the correct result.
 
 Installation
 ------------
