@@ -50,12 +50,21 @@ Installation
 1.  Download the `XTemplate.php` file from the repository.
 2.  Include it in your project:
 ```    
-        <?php
-        require_once 'XTemplate.php';
+   <?php
+   require_once 'XTemplate.php';
  ```                   
     
 
 No additional dependencies are required.
+
+### Requirements
+
+```
+   PHP 5.4.0 or higher
+   Mbstring
+   PCRE
+   Hash
+```
 
 Basic Usage
 -----------
