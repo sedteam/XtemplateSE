@@ -38,6 +38,40 @@ class XTemplate
     private static $cleanupEnabled = false;
     private $found = false;
     private $cache = null;
+    protected static $defaultDebug = false;
+    protected static $defaultDebugOutput = false;
+
+    /**
+     * Configures global settings for XTemplate instances. This method should be called once before creating instances.
+     *
+     * @param array $settings An associative array of settings:
+     *                        - 'cacheEnabled' (bool): Enables or disables caching.
+     *                        - 'cacheDir' (string): Directory path for cache storage.
+     *                        - 'debug' (bool): Enables or disables debug mode for all instances.
+     *                        - 'debugOutput' (bool): Enables or disables debug output for all instances.
+     *                        - 'cleanupEnabled' (bool): Enables or disables HTML cleanup.
+     */
+    public static function configure(array $settings = [])
+    {
+        // Default values
+        $defaults = [
+            'cacheEnabled' => false,
+            'cacheDir' => '',
+            'debug' => false,
+            'debugOutput' => false,
+            'cleanupEnabled' => false,
+        ];
+
+        // Merge provided settings with defaults
+        $settings = array_merge($defaults, $settings);
+
+        // Set properties without validation
+        self::$cacheEnabled = $settings['cacheEnabled'];
+        self::$cacheDir = $settings['cacheDir'];
+        self::$defaultDebug = $settings['debug'];
+        self::$defaultDebugOutput = $settings['debugOutput'];
+        self::$cleanupEnabled = $settings['cleanupEnabled'];
+    }
 
     /**
      * Constructs an XTemplate instance, optionally initializing with a template file path.
@@ -46,6 +80,10 @@ class XTemplate
      */
     public function __construct($path = null)
     {
+        // Set default values for instance properties
+        $this->debug = self::$defaultDebug;
+        $this->debugOutput = self::$defaultDebugOutput;
+
         if (self::$cacheEnabled) {
             $this->cache = new XtplCache(self::$cacheDir);
         }
