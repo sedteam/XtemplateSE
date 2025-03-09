@@ -114,6 +114,15 @@
         <!-- ENDIF -->
     </div>
     <!-- END: STATS -->
+	
+	
+	<h2>Arithmetic Expression Tests</h2>
+    <p>Simple numbers: {2 + 3 + 8} = (expected: 13)</p>
+    <p>Variable + number: {USER_SCORE + 10} = (expected: 95, USER_SCORE = 85)</p>
+    <p>Variable + variable: {USER_SCORE + USER_LEVEL} = (expected: 92, USER_SCORE = 85, USER_LEVEL = 7)</p>
+    <p>Nested variable: {ITEMS.0.price + ITEMS.0.discount} = (expected: 12, ITEMS[0].price = 10, ITEMS[0].discount = 2)</p>
+    <p>Multiple nested: {ITEMS.0.price + ITEMS.1.price + ITEMS.2.price} = (expected: 60, 10 + 20 + 30)</p>
+    <p>Mixed: {USER_SCORE + ITEMS.0.price + 5} = (expected: 100, 85 + 10 + 5)</p>
 
 </body>
 </html>
