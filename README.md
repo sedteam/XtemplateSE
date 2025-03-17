@@ -1,4 +1,4 @@
-XTemplate SE
+PHP XTemplate SE
 ============
 
 Table of Contents
